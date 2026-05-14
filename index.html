@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kigali Online Market</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="language-switcher">
+        <select id="language-select">
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+            <option value="rw">Kinyarwanda</option>
+        </select>
+    </div>
+    <h1> 🛒Kigali Online Market</h1>
+    <marquee behavior="scroll" direction="left" scrollamount="3"><span class="darius"> Welcome to Kigali Online Market </span></marquee>
+    <hr>
+    <div class="container">
+        <h2>Our Products</h2>
+        <div class="products">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=150&h=150&fit=crop" alt="Rice">
+            </div>
+            <div class="product-info">
+                <span class="product-name">Rice super</span>
+                <span class="product-price">100,000 frw</span>
+            </div>
+            <button class="productsBtn" data-name="Rice super" data-price="100000">Add Cart</button>
+        </div>
+
+        <div class="products">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=150&h=150&fit=crop" alt="Charger">
+            </div>
+            <div class="product-info">
+                <span class="product-name">Chargers for Iphone</span>
+                <span class="product-price">6,000 frw</span>
+            </div>
+            <button class="productsBtn" data-name="Chargers for Iphone" data-price="6000">Add Cart</button>
+        </div>
+
+        <div class="products">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=150&h=150&fit=crop" alt="Headphones">
+            </div>
+            <div class="product-info">
+                <span class="product-name">Head Phones for pc</span>
+                <span class="product-price">20,000 frw</span>
+            </div>
+            <button class="productsBtn" data-name="Head Phones for pc" data-price="20000">Add Cart</button>
+        </div>
+    
+        <div class="products">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=150&h=150&fit=crop" alt="Fish">
+            </div>
+            <div class="product-info">
+                <span class="product-name">Fish fresh kurobwa</span>
+                <span class="product-price">60,000 frw</span>
+            </div>
+            <button class="productsBtn" data-name="Fish fresh kurobwa" data-price="60000">Add Cart</button>
+        </div>
+        
+        <div class="cart">
+            <h2>Cart</h2>
+            <div id="cart-items"></div>
+            <p>Subtotal: <span id="subtotal">0</span> frw</p>
+            <label for="district">Select District :</label>
+            <select name="location" id="district">
+                <option value="0">Select Your District</option>
+                <option value="500">Gasabo - 500 frw</option>
+                <option value="1000">Kicukiro - 1,000 frw</option>
+                <option value="1500">Busanza - 1,500 frw</option>
+                <option value="800">Kagarama - 800 frw</option>
+            </select>
+            <p>Shipping: <span id="shipping">0</span> frw</p>
+            <p id="free-shipping-msg" class="free-shipping"></p>
+            <p class="total">Total: <span id="total">0</span> frw</p>
+        </div>
+        <button class="Apply">Apply Now</button>
+        <p id="errormessage"></p>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
