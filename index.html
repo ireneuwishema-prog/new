@@ -17,6 +17,32 @@
     <h1> 🛒Kigali Online Market</h1>
     <marquee behavior="scroll" direction="left" scrollamount="3"><span class="darius"> Welcome to Kigali Online Market </span></marquee>
     <hr>
+    
+    <!-- FLOATING CART SUMMARY - Always visible on screen -->
+    <div class="floating-cart" id="floatingCart">
+        <div class="floating-cart-header">
+            🛒 Your Cart Total
+        </div>
+        <div class="floating-cart-content">
+            <div class="floating-item">
+                <span>Items:</span>
+                <span id="floating-cart-count">0</span>
+            </div>
+            <div class="floating-item">
+                <span>Subtotal:</span>
+                <span id="floating-subtotal">0</span> frw
+            </div>
+            <div class="floating-item">
+                <span>Shipping:</span>
+                <span id="floating-shipping">0</span> frw
+            </div>
+            <div class="floating-item total">
+                <span>TOTAL:</span>
+                <span id="floating-total">0</span> frw
+            </div>
+        </div>
+    </div>
+    
     <div class="container">
         <h2>Our Products</h2>
         <div class="products">
@@ -57,17 +83,17 @@
                 <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=150&h=150&fit=crop" alt="Fish">
             </div>
             <div class="product-info">
-                <span class="product-name">Fish fresh kurobwa</span>
+                <span class="product-name">Fish that is done</span>
                 <span class="product-price">60,000 frw</span>
             </div>
             <button class="productsBtn" data-name="Fish fresh kurobwa" data-price="60000">Add Cart</button>
         </div>
         
         <div class="cart">
-            <h2>Cart</h2>
+            <h2>Cart Items</h2>
             <div id="cart-items"></div>
-            <p>Subtotal: <span id="subtotal">0</span> frw</p>
-            <label for="district">Select District :</label>
+            <p><strong>Subtotal:</strong> <span id="subtotal">0</span> frw</p>
+            <label for="district"><strong>Select District:</strong></label>
             <select name="location" id="district">
                 <option value="0">Select Your District</option>
                 <option value="500">Gasabo - 500 frw</option>
@@ -75,9 +101,9 @@
                 <option value="1500">Busanza - 1,500 frw</option>
                 <option value="800">Kagarama - 800 frw</option>
             </select>
-            <p>Shipping: <span id="shipping">0</span> frw</p>
+            <p><strong>Shipping:</strong> <span id="shipping">0</span> frw</p>
             <p id="free-shipping-msg" class="free-shipping"></p>
-            <p class="total">Total: <span id="total">0</span> frw</p>
+            <p class="total"><strong>TOTAL AMOUNT:</strong> <span id="total">0</span> frw</p>
         </div>
         <button class="Apply">Apply Now</button>
         <p id="errormessage"></p>

@@ -6,6 +6,7 @@
 body{
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
+    padding-top: 20px;
 }
 .language-switcher{
     position: absolute;
@@ -87,9 +88,11 @@ button.productsBtn {
     border-radius: 0.5em;
     cursor: pointer;
     margin-left: 10px;
+    transition: transform 0.2s;
 }
 button.productsBtn:hover{
     background-color: #45a049;
+    transform: scale(1.05);
 }
 .cart{
     margin-top: 20px;
@@ -139,6 +142,8 @@ select{
     font-size: 1.2em;
     font-weight: bold;
     color: #333;
+    border-top: 2px solid #4CAF50;
+    padding-top: 10px;
 }
 button.Apply{
     margin-top: 20px;
@@ -149,13 +154,162 @@ button.Apply{
     border-radius: 0.5em;
     cursor: pointer;
     width: 100%;
+    transition: transform 0.2s;
 }
 button.Apply:hover{
     background-color: #1976D2;
+    transform: scale(1.02);
 }
 #errormessage{
     margin-top: 15px;
     padding: 10px;
     text-align: center;
     color: #333;
+}
+
+/* ============================================== */
+/* FLOATING CART - ALWAYS VISIBLE TOTAL */
+/* ============================================== */
+
+.floating-cart {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 999;
+    min-width: 200px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.floating-cart:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.floating-cart.highlight {
+    animation: bounce 0.5s ease;
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+}
+
+.floating-cart.celebrate {
+    animation: celebrate 0.5s ease;
+}
+
+.floating-cart-header {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    padding-bottom: 5px;
+}
+
+.floating-cart-content {
+    font-size: 0.9em;
+}
+
+.floating-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
+.floating-item.total {
+    font-weight: bold;
+    font-size: 1.1em;
+    border-top: 1px solid rgba(255,255,255,0.3);
+    margin-top: 5px;
+    padding-top: 5px;
+}
+
+/* Animations */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes celebrate {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%); }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Confetti Animation */
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background-color: #f00;
+    position: fixed;
+    top: -10px;
+    border-radius: 2px;
+    animation: confetti-fall linear forwards;
+    z-index: 10000;
+    pointer-events: none;
+}
+
+@keyframes confetti-fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Confirmation Messages */
+.add-confirmation {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border-left: 4px solid #4CAF50;
+    animation: slideDown 0.3s ease-out;
+    font-weight: bold;
+}
+
+.remove-confirmation {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border-left: 4px solid #f44336;
+    animation: slideDown 0.3s ease-out;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .floating-cart {
+        bottom: 10px;
+        right: 10px;
+        left: 10px;
+        min-width: auto;
+        border-radius: 10px;
+    }
+    
+    .floating-item {
+        font-size: 0.85em;
+    }
+    
+    .floating-cart-header {
+        font-size: 1em;
+    }
 }
